@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+
+<VBox alignment="CENTER" prefHeight="556.0" prefWidth="611.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client_gui.SettingsController">
+   <children>
+      <AnchorPane minHeight="200.0" prefHeight="287.0" prefWidth="611.0">
+         <children>
+            <AnchorPane layoutX="21.0" layoutY="20.0" prefHeight="212.0" prefWidth="569.0" style="-fx-background-color: eeeeee;" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <Label layoutX="51.0" layoutY="167.0" prefHeight="17.0" prefWidth="206.0" text="Automatically login if necessary with " AnchorPane.leftAnchor="51.0" AnchorPane.topAnchor="167.0" />
+                  <Label layoutX="20.0" layoutY="59.0" prefHeight="17.0" prefWidth="206.0" text="Server Port (Integer 1024 - 65535)" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="59.0" />
+                  <TextField fx:id="autoLoginTextField" layoutX="257.0" layoutY="163.0" prefHeight="25.0" prefWidth="277.0" AnchorPane.leftAnchor="257.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="163.0" />
+                  <Label layoutX="20.0" layoutY="99.0" prefHeight="17.0" prefWidth="206.0" text="Server IP Address" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="99.0" />
+                  <TextField fx:id="portTextField" layoutX="233.0" layoutY="55.0" prefHeight="25.0" prefWidth="342.0" AnchorPane.leftAnchor="233.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="55.0" />
+                  <TextField fx:id="ipTextField" layoutX="233.0" layoutY="95.0" prefHeight="25.0" prefWidth="342.0" AnchorPane.leftAnchor="233.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="95.0" />
+                  <Label layoutX="177.0" layoutY="22.0" prefHeight="17.0" prefWidth="206.0" text="These Settings Require Restart " />
+                  <CheckBox fx:id="autoConnectBox" layoutX="154.0" layoutY="133.0" mnemonicParsing="false" onAction="#autoConnectBoxChanged" />
+                  <Label layoutX="20.0" layoutY="133.0" prefHeight="17.0" prefWidth="134.0" text="Connect automatically" />
+               </children>
+            </AnchorPane>
+            <Label alignment="CENTER" layoutX="90.0" layoutY="228.0" prefHeight="25.0" prefWidth="119.0" text="Size" wrapText="true">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="248.0" prefHeight="33.0" prefWidth="359.0" text="Font " wrapText="true">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="fontSizeTextField" layoutX="90.0" layoutY="252.0" onAction="#updateFontTest" prefHeight="25.0" prefWidth="119.0" />
+            <Label alignment="CENTER" layoutX="241.0" layoutY="227.0" prefHeight="25.0" prefWidth="342.0" text="Family" wrapText="true">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="fontFamilyComboBox" layoutX="241.0" layoutY="252.0" onAction="#updateFontTest" prefHeight="25.0" prefWidth="342.0" />
+         </children>
+      </AnchorPane>
+      <TextField fx:id="fontTestField" prefHeight="27.0" prefWidth="591.0" promptText="Try Your New Font Here">
+         <VBox.margin>
+            <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
+         </VBox.margin>
+      </TextField>
+      <AnchorPane minHeight="97.0" prefHeight="97.0" prefWidth="611.0">
+         <children>
+            <Label layoutX="28.0" layoutY="14.0" prefHeight="33.0" prefWidth="359.0" text="Time Stamps" wrapText="true" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="14.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="47.0" prefHeight="25.0" prefWidth="359.0" text="use Strings like &quot;dd.MM.yyyy HH:mm:ss&quot; or empty" wrapText="true" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="47.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="timeStampTextField" layoutX="241.0" layoutY="17.0" prefHeight="25.0" prefWidth="342.0" AnchorPane.topAnchor="17.0" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </AnchorPane>
+      <Button fx:id="doneButton" mnemonicParsing="false" onAction="#onDoneButtonClicked" text="Done" />
+   </children>
+</VBox>

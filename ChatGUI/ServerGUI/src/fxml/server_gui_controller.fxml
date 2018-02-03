@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="server_gui.ServerGUIController">
+   <children>
+      <ScrollPane fx:id="scrollpane1" focusTraversable="false" hbarPolicy="NEVER" layoutX="417.0" layoutY="15.0" prefViewportHeight="355.0" prefViewportWidth="236.0" AnchorPane.bottomAnchor="184.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="40.0">
+         <content>
+            <ListView fx:id="userlist" layoutX="422.0" layoutY="14.0" prefHeight="374.0" prefWidth="248.0" AnchorPane.bottomAnchor="186.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+         </content>
+      </ScrollPane>
+      <Button fx:id="banUser" focusTraversable="false" layoutX="480.0" layoutY="313.0" minWidth="111.0" mnemonicParsing="false" onAction="#onBanUserClicked" text="Ban Selected User" AnchorPane.bottomAnchor="146.0" AnchorPane.rightAnchor="77.0" />
+      <TextField fx:id="sendTextField" layoutX="14.0" layoutY="436.0" onAction="#onButtonSendToAllClicked" prefHeight="25.0" prefWidth="464.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="200.0" />
+      <Separator layoutX="9.0" layoutY="388.0" prefHeight="15.0" prefWidth="649.0" AnchorPane.bottomAnchor="81.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <Button id="send_button" fx:id="buttonSendToAll" focusTraversable="false" layoutX="486.0" layoutY="436.0" mnemonicParsing="false" onAction="#onButtonSendToAllClicked" prefHeight="25.0" prefWidth="168.0" text="Send To All" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="13.0" />
+      <Label fx:id="sendToLabel" layoutX="14.0" layoutY="411.0" prefHeight="17.0" prefWidth="464.0" text="Send Message To Clients" AnchorPane.bottomAnchor="56.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="200.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button fx:id="buttonPreferences" focusTraversable="false" layoutX="460.0" layoutY="355.0" mnemonicParsing="false" onAction="#onButtonPreferences" prefHeight="25.0" prefWidth="168.0" text="Server Preferences" AnchorPane.bottomAnchor="107.0" AnchorPane.rightAnchor="49.0" />
+      <ScrollPane fx:id="scrollpane2" focusTraversable="false" hbarPolicy="NEVER" layoutX="15.0" layoutY="15.0" prefViewportHeight="355.0" prefViewportWidth="391.0" AnchorPane.bottomAnchor="184.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="277.0" AnchorPane.topAnchor="40.0">
+         <content>
+            <TextFlow fx:id="textflow" disable="true" layoutX="17.0" layoutY="15.0" prefHeight="374.0" prefWidth="406.0" style="-fx-background-color: white; -fx-border-color: lightgray;" AnchorPane.bottomAnchor="186.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="262.0" AnchorPane.topAnchor="15.0" />
+         </content>
+      </ScrollPane>
+      <Button fx:id="buttonSendToSelected" focusTraversable="false" layoutX="487.0" layoutY="407.0" mnemonicParsing="false" onAction="#onButtonSendToSelectedClicked" prefHeight="25.0" prefWidth="168.0" text="Send To Selected User" AnchorPane.bottomAnchor="52.0" AnchorPane.rightAnchor="13.0" />
+      <Label layoutX="15.0" layoutY="377.0" text="Client Info" AnchorPane.bottomAnchor="159.0" AnchorPane.leftAnchor="15.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="clientInfoLabel1" layoutX="29.0" layoutY="402.0" text="Label" AnchorPane.bottomAnchor="137.0" AnchorPane.leftAnchor="29.0" />
+      <Label fx:id="clientInfoLabel2" layoutX="29.0" layoutY="428.0" text="Label" AnchorPane.bottomAnchor="111.0" AnchorPane.leftAnchor="29.0" />
+      <Label fx:id="serverStatus" layoutX="18.0" layoutY="14.0" text="Server Status">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

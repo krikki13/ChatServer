@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="611.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="server_gui.PreferencesController">
+   <children>
+      <AnchorPane maxHeight="300.0" minHeight="200.0" prefHeight="199.0" prefWidth="611.0">
+         <children>
+            <Label layoutX="35.0" layoutY="27.0" prefHeight="17.0" prefWidth="198.0" text="Load or save preferences from file:" AnchorPane.leftAnchor="30.0" />
+            <TextField fx:id="loadFromTextField" layoutX="35.0" layoutY="58.0" prefHeight="25.0" prefWidth="469.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="112.0" />
+            <Button fx:id="buttonLoad" focusTraversable="false" layoutX="369.0" layoutY="101.0" mnemonicParsing="false" onAction="#onButtonLoadClicked" prefHeight="25.0" prefWidth="74.0" text="Load File" AnchorPane.leftAnchor="369.0" />
+            <Button fx:id="buttonBrowse" focusTraversable="false" layoutX="515.0" layoutY="58.0" mnemonicParsing="false" onAction="#onButtonBrowseClicked" text="Browse" AnchorPane.rightAnchor="41.0" />
+            <Button fx:id="buttonUpdate" focusTraversable="false" layoutX="476.0" layoutY="101.0" mnemonicParsing="false" onAction="#onButtonUpdateClicked" prefHeight="25.0" prefWidth="94.0" text="Update File" />
+            <Label layoutX="27.0" layoutY="137.0" prefHeight="17.0" prefWidth="256.0" text="Automaticaly load this preferences file" />
+            <CheckBox fx:id="autoLoadCheckBox" focusTraversable="false" layoutX="242.0" layoutY="137.0" mnemonicParsing="false" />
+            <Label layoutX="27.0" layoutY="162.0" prefHeight="17.0" prefWidth="209.0" text="Automaticaly run this preferences file" />
+            <CheckBox fx:id="autoRunCheckBox" focusTraversable="false" layoutX="242.0" layoutY="162.0" mnemonicParsing="false" />
+            <Button fx:id="buttonCreateTextFile" focusTraversable="false" layoutX="30.0" layoutY="101.0" mnemonicParsing="false" onAction="#onButtonCreateTextFile" text="Create New Text File" />
+            <Button fx:id="buttonCreateBinaryFile" focusTraversable="false" layoutX="198.0" layoutY="101.0" mnemonicParsing="false" onAction="#onButtonCreateBinaryFile" text="Create New Binary File" />
+         </children>
+      </AnchorPane>
+      <ScrollPane focusTraversable="false" hbarPolicy="NEVER" prefHeight="341.0" prefWidth="611.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="524.0" prefWidth="602.0">
+               <children>
+                  <AnchorPane layoutX="1.0" layoutY="8.0" prefHeight="462.0" prefWidth="600.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="18.0" prefHeight="17.0" prefWidth="168.0" text="Port (Integer 1024 - 65535)" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="18.0" />
+                        <TextField fx:id="portTextField" layoutX="170.0" layoutY="14.0" prefHeight="25.0" prefWidth="176.0" AnchorPane.topAnchor="14.0" />
+                        <Label layoutX="14.0" layoutY="58.0" prefHeight="17.0" prefWidth="143.0" text="Login Required" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="58.0" />
+                        <CheckBox fx:id="loginRequiredCheckBox" layoutX="170.0" layoutY="59.0" mnemonicParsing="false" />
+                        <Label layoutX="14.0" layoutY="98.0" text="Username Length" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="98.0" />
+                        <TextField fx:id="usernameLengthFrom" layoutX="195.0" layoutY="94.0" prefHeight="25.0" prefWidth="67.0" />
+                        <Label layoutX="167.0" layoutY="98.0" text="From" />
+                        <Label layoutX="268.0" layoutY="98.0" text="To" />
+                        <TextField fx:id="usernameLengthTo" layoutX="282.0" layoutY="94.0" prefHeight="25.0" prefWidth="67.0" />
+                        <Label layoutX="14.0" layoutY="139.0" prefHeight="17.0" prefWidth="135.0" text="Max Number Of Clients" AnchorPane.leftAnchor="14.0" />
+                        <TextField fx:id="maxNumTextField" layoutX="170.0" layoutY="135.0" prefHeight="25.0" prefWidth="176.0" />
+                        <Label layoutX="14.0" layoutY="185.0" prefHeight="17.0" prefWidth="281.0" text="Allowed Usernames As Regex Like &quot;[a-zA-Z0-9]*&quot;" AnchorPane.leftAnchor="14.0">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="25.0" layoutY="207.0" prefHeight="17.0" prefWidth="285.0" text="Following signs are always forbidden: : &quot; ' , - \ / &lt; &gt; [ ] ">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="allowedUsernamesTextField" layoutX="304.0" layoutY="181.0" prefHeight="25.0" prefWidth="271.0" AnchorPane.leftAnchor="307.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="190.0" />
+                        <Label layoutX="12.0" layoutY="237.0" prefHeight="17.0" prefWidth="290.0" text="Forbidden Usernames As Regex Like &quot;robert|vegi.*&quot;" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="237.0">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="forbiddenUsernamesTextField" layoutX="307.0" layoutY="240.0" prefHeight="25.0" prefWidth="273.0" AnchorPane.leftAnchor="307.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="240.0" />
+                        <Label layoutX="17.0" layoutY="285.0" prefHeight="17.0" prefWidth="290.0" text="Forbidden Words As Regex Like &quot;broccoli|cauliflower&quot;" AnchorPane.leftAnchor="17.0" AnchorPane.topAnchor="285.0">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="forbiddenWordsTextField" layoutX="307.0" layoutY="281.0" prefHeight="25.0" prefWidth="274.0" AnchorPane.leftAnchor="307.0" AnchorPane.topAnchor="281.0" />
+                        <Label layoutX="19.0" layoutY="319.0" prefHeight="33.0" prefWidth="359.0" text="Time Stamps" wrapText="true" AnchorPane.leftAnchor="17.0" AnchorPane.topAnchor="317.0">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="27.0" layoutY="357.0" prefHeight="25.0" prefWidth="359.0" text="use Strings like &quot;dd.MM.yyyy HH:mm:ss&quot; or empty" wrapText="true" AnchorPane.leftAnchor="17.0" AnchorPane.topAnchor="340.0">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="timeStampFormatTextField" layoutX="316.0" layoutY="305.0" AnchorPane.leftAnchor="307.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="333.0" />
+                        <AnchorPane layoutX="18.0" layoutY="330.0" prefHeight="111.0" prefWidth="573.0" style="-fx-background-color: eeeeee;" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="380.0">
+                           <children>
+                              <Label layoutX="23.0" layoutY="14.0" text="TEST REGEX" />
+                              <Label layoutX="23.0" layoutY="40.0" prefHeight="17.0" prefWidth="105.0" text="Regex String" />
+                              <TextField fx:id="regexStringTest" layoutX="115.0" layoutY="39.0" prefHeight="25.0" prefWidth="290.0" />
+                              <Label layoutX="23.0" layoutY="72.0" prefHeight="17.0" prefWidth="105.0" text="Test Input" />
+                              <TextField fx:id="regexInputTest" layoutX="114.0" layoutY="69.0" prefHeight="25.0" prefWidth="291.0" />
+                              <Button fx:id="buttonRegexTest" layoutX="460.0" layoutY="19.0" minWidth="50.0" mnemonicParsing="false" onAction="#onButtonRegexTestClicked" prefHeight="25.0" prefWidth="61.0" text="Test" />
+                              <Label fx:id="regexTestResult" alignment="CENTER" contentDisplay="CENTER" layoutX="423.0" layoutY="64.0" prefHeight="17.0" prefWidth="135.0" />
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="25.0" layoutY="257.0" text="Always forbidden are: system|error">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <Label fx:id="updateWarningLabel" prefHeight="57.0" prefWidth="461.0" text="To update the preferences file you must always click Update File. By clicking Done only, changes will be applied only for the current session." textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </Label>
+      <Button fx:id="buttonDone" mnemonicParsing="false" onAction="#onButtonDoneClicked" onMouseEntered="#onButtonDoneMouseEntered" onMouseExited="#onButtonDoneMouseExited" prefHeight="25.0" prefWidth="61.0" text="Done">
+         <VBox.margin>
+            <Insets bottom="20.0" top="10.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>
